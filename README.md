@@ -1,37 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js 15 Template
 
-## Getting Started
+A scalable and well-structured **Next.js 15** template with the following technologies:
 
-First, run the development server:
+- **App Router & `src/` Directory**
+- **Authentication**: NextAuth.js (GitHub OAuth)
+- **UI Components**: ShadCN + Tailwind CSS
+- **Data Fetching**: TanStack Query
+- **Forms**: TanStack Form (pending)
+- **Internationalization (i18n)**: (pending)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```sh
+git clone https://github.com/Allin-Technologies/nextjs-15-app-template.git
+cd nextjs-15-app-template
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```zsh
+bun install  # or yarn/npm
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Set up environment variables
+Create a `.env` file in the root directory and add:
+```env
+AUTH_GITHUB_ID=your_github_client_id
+AUTH_GITHUB_SECRET=your_github_client_secret
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+NEXT_PUBLIC_APP_NAME="Next.js 15 template"
 
-## Learn More
+AUTH_SECRET=your_secret
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Run the development server
+```zsh
+bun dev  # or bun devsafe
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app should be available at `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📂 Folder Structure
+```
+/your-repo
+│── public/             # Static assets
+│── src/
+│   ├── app/            # Next.js app router
+│   ├── components/     # UI components (ShadCN)
+│   ├── hooks/          # Custom hooks
+│   ├── lib/            # Config files, utils
+│   ├── providers/      # Context & Providers
+│   ├── services/       # API service calls
+│   ├── stores/         # State management (if needed)
+│   ├── styles/         # Tailwind & Global styles
+│   ├── types/          # TypeScript interfaces
+│── .env                # Environment variables
+│── next.config.mjs     # Next.js config
+│── tailwind.config.ts  # Tailwind config
+│── tsconfig.json       # TypeScript config
+│── package.json        # Dependencies
+│── README.md           # Documentation
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# nextjs-15-app-template
+## 🔐 Authentication
+This template uses **NextAuth.js** with GitHub OAuth. To enable authentication:
+1. Create a GitHub OAuth app [here](https://github.com/settings/developers)
+2. Add your `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` in `.env`
+
+Authentication is handled in `src/lib/auth.ts`.
+
+---
+
+## 📦 Dependencies
+| Name                 | Description                |
+|----------------------|----------------------------|
+| `next-auth`         | Authentication with GitHub |
+| `@tanstack/react-query` | Data fetching management |
+| `@tanstack/react-form`  | Form handling            |
+| `tailwindcss`       | Utility-first styling      |
+| `shadcn/ui`         | UI components              |
+
+---
+
+## 🛠 Contributing
+We welcome contributions! Please follow these steps:
+
+1. **Fork** the repository
+2. **Create** a new branch (`feature/your-feature`)
+3. **Commit** your changes (`git commit -m 'Add new feature'`)
+4. **Push** the branch (`git push origin feature/your-feature`)
+5. **Open a Pull Request**
+
+### Coding Guidelines
+- Follow the **Next.js App Router** structure
+- Use **TypeScript** for type safety
+- Use **ShadCN components** where possible
+- Keep functions and components modular
+
+---
+
+## 🚀 Deployment
+To deploy, use **Vercel**:
+```sh
+vercel deploy
+```
+Or manually build:
+```sh
+pnpm build
+```
+
+---
+
+## 📄 License
+This project is licensed under the **MIT License**.
+
+---
+
+## ⭐ Acknowledgements
+- Next.js Team
+- TanStack Query/Form
+- ShadCN UI
+
+If you find this useful, give us a ⭐ on [GitHub](https://github.com/your-org/nextjs-template)! 🚀
+
