@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "framer-motion";
 import Logo from "public/next.svg";
 import { Button } from "../ui/button";
 import Link from "next/link";
